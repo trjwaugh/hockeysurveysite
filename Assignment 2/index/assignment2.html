@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hockey Survey</title>
+        <script src="hockeyScript.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Francois+One|Roboto" rel="stylesheet">
+        <style>
+            /*font-family: 'Roboto', sans-serif;
+            font-family: 'Francois One', sans-serif;*/
+            
+            html{
+                text-align: center;
+            }
+            fieldset{
+                display: inline-block;
+                font-family: 'Roboto', sans-serif;
+                margin-bottom: 10px;
+                background-color: white;
+                box-shadow: 3px 3px;
+                border: none;
+            }
+            .econf{
+                float: right;
+                padding-left: 600px;
+                text-align: left;
+                width:50%;
+                font-size: 1.2em;
+                background-image: url("../images/back4.png");
+                background-position: top;
+                background-size: cover;
+                padding-bottom: 50px;
+            }
+            .wconf{
+                float:left;
+                padding-right: 600px;
+                text-align: right;
+                width:50%;
+                font-size: 1.2em;
+                background-image: url("../images/back.jpg");
+                background-position: right;
+                background-size: cover;
+                padding-bottom: 50px;
+            }
+            .name{
+                border-style: none;
+                border-bottom: 1px solid gray;
+            /*checks name and capitalizes first letter*/
+                text-transform: capitalize;
+            }
+            .watch{
+                font-size: 110%;
+            }
+            .team{
+                padding: 5px;
+                background-color: lightgray;
+                font-size: .25em;
+            }
+            body{
+            	margin: 0 auto;
+	            background-image: url("../images/backlarge.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: auto;
+                background-color: black;
+            }
+            form{
+                display: block;
+            }
+            select, input{
+                font-size: 110%;
+            }
+            p{
+                text-align: left;
+            }
+            option{
+                font-family: 'Roboto', sans-serif;
+            }
+            legend{
+                text-align: center;
+            }
+            h1{
+                background-image: url("../images/back5.png");
+                background-position: center;
+                width: 600px;
+            }
+            h1, h2{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            h1, h2, legend{
+                display: inline-block;
+                box-shadow: 3px 3px;
+            }
+            h1, h2, h3, h4, legend{
+                font-family: 'Francois One', sans-serif;
+                background-color: white;
+                border: 4px inset transparent;
+            }
+            .button{
+                font-family: 'Francois One', sans-serif;
+                font-size: 1.5em;
+                text-align: center;
+                background-color: white;
+                border: 4px inset transparent;
+                width: 300px;
+                border: 3px solid black;
+            }
+            i{
+                color: gray;
+            }
+            #error{
+                color: darkred;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><img src="../images/nhlLogo.png" height ="25%" width="25%"><br>Hockey Viewership Survey<br><br></h1>
+        <form name="form1" onsubmit="return false;"><fieldset><legend>Personal Information</legend>
+            <br>
+            <i><b>*</b> = mandetory field</i>
+            <div id="error" style="white-space: pre-line"></div>
+            <h4><i>*</i> Enter your name:</h4><article.top>
+                <input class="name" id="firstName" type="text" placeholder="First Name" name="firstName" required>
+                <br><br>
+                <input class="name" id="lastName" type="text" placeholder="Last Name" name="lastName" required>
+                <br>
+                <br>
+                <p id="errorGender"></p>
+                <h4><i>*</i> Select the gender you indentify with:</h4><p>
+                <input type="radio" name="gender" value="Male" required> Male<br>
+                <input type="radio" name="gender" value="Female" required> Female<br>
+                <input type="radio" name="gender" value="Neither" required> Neither<br>
+                <input type="radio" name="gender" value="Prefer not to say" required checked> Prefer not to say<br></p>
+                <br> 
+                <h4><i>*</i> Select your age range:</h4>
+                <select id="age" name="ageList" form="form1" required>
+                        <option value="null">Select One</option>
+                        <option value="18">18 and under</option>
+                        <option value="19">19-25</option>
+                        <option value="26">26-30</option>
+                        <option value="31">31-45</option>
+                        <option value="46">46 or older</option>
+                      </select>
+                      <br>
+                      <br>
+                    </fieldset>
+                      <br>
+                      <br>
+                <h2>How do you watch hockey games?</h2><br>
+                <select id="watch" class="watch" name="watchList" form="form1">
+                        <option value="null">Select One</option>
+                        <option value="tv">Home Cable</option>
+                        <option value="stream">Streaming Service</option>
+                        <option value="est">At An Establishment</option>
+                        <option value="friend">At a Friend's</option>
+                        <option value="sth">Live (Season Ticket Holder)</option>
+                </select>
+            <br>
+            <br>
+            <br>
+            <h2>Who are your favourite teams?</h2><br>
+            <article>
+            <fieldset class="econf"><legend class="elegend">Eastern Conference</legend><br><b>
+            <input type="checkbox" name="team" value="bos ">Boston Bruins <br> 
+            <input type="checkbox" name="team" value="buf ">Buffalo Sabres <br>
+            <input type="checkbox" name="team" value="car ">Carolina Hurricanes <br>
+            <input type="checkbox" name="team" value="cbj ">Columbus Blue Jackets  <br>
+            <input type="checkbox" name="team" value="fla ">Flordia Panthers  <br> 
+            <input type="checkbox" name="team" value="njd ">New Jersey Devils <br>
+            <input type="checkbox" name="team" value="nyi ">New York Islanders  <br>
+            <input type="checkbox" name="team" value="nyr ">New York Rangers  <br>
+            <input type="checkbox" name="team" value="mtl ">Montreal Canadiens  <br>
+            <input type="checkbox" name="team" value="ott ">Ottawa Senators  <br>
+            <input type="checkbox" name="team" value="phi ">Philadelphia Flyers <br>  
+            <input type="checkbox" name="team" value="pit ">Pittsburgh Penguins <br>
+            <input type="checkbox" name="team" value="tbl ">Tampa Bay Lightening  <br>
+            <input type="checkbox" name="team" value="tor ">Toronto Maple Leafs  <br>
+            <input type="checkbox" name="team" value="wsh ">Washington Capitals</b></fieldset><br>
+            <fieldset class="wconf"><legend class="wlegend">Western Conference</legend><br><b>
+            Anaheim Ducks <input type="checkbox" name="team" value="ana "><br>
+            Arizona Coyotes <input type="checkbox" name="team" value="ari "><br>
+            Calgary Flames <input type="checkbox" name="team" value="cal "><br>
+            Chicago Blackhawks <input type="checkbox" name="team" value="chi "><br>
+            Colorado Avalanche <input type="checkbox" name="team" value="col "><br>
+            Dallas Stars <input type="checkbox" name="team" value="dal "><br>
+            Edmonton Oilers <input type="checkbox" name="team" value="edm "><br>
+            Los Angeles Kings <input type="checkbox" name="team" value="lak "><br>
+            Minnesota Wild <input type="checkbox" name="team" value="min "><br>
+            Nashville Predators <input type="checkbox" name="team" value="nsh "><br>
+            San Jose Sharks <input type="checkbox" name="team" value="sjs "><br>
+            St. Louis Blues <input type="checkbox" name="team" value="stl "><br>
+            Vancouver Canucks <input type="checkbox" name="team" value="van "><br> 
+            Vegas Golden Knights <input type="checkbox" name="team" value="vgk "><br>
+            Winnipeg Jets <input type="checkbox" name="team" value="win "></b></fieldset></article>
+        </form>
+        <input class="button" type="submit" id="submit "onclick="validate();">
+        <br>
+        <br>
+    </body>
+    <footer></footer>
+</html>
