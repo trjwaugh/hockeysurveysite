@@ -5,4 +5,4 @@ Alternatively, you could host them and publish them online but i dont know why y
 
 
 Feb 19 2019
-uploaded this file to Heroku.
+uploaded this file to Heroku. Added composer and Procfile file.
