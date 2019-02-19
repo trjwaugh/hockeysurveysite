@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 Assignment 2/index/
+web: vendor/bin/heroku-php-apache2 Assignment2/index/
